@@ -1,0 +1,30 @@
+{
+  "_README": [
+    "Mappa compressore in formato interno I.A.zz (v0).",
+    "MODIFICABILE A MANO: i campi sotto 'polynomials' sono i 10",
+    "coefficienti EN 12900 per grandezza, nell'ordine c1..c10.",
+    "Formula: X = c1 + c2*Te + c3*Tc + c4*Te^2 + c5*Te*Tc + c6*Tc^2",
+    "        + c7*Te^3 + c8*Te^2*Tc + c9*Te*Tc^2 + c10*Tc^3",
+    "con Te, Tc in GRADI CELSIUS (convenzione EN 12900).",
+    "Il fit e' alla frequenza 'rated_frequency_hz'; per altre frequenze",
+    "si scala linearmente con f/f_rated (frequency_scaling='linear')."
+  ],
+  "source": "HP_THOM_v2.4.xlsx, foglio 5_COMPRESSORE, estratto 2026-06-11",
+  "vendor": "Bitzer",
+  "model": "4NES-14Y-40P",
+  "compressor_type": "reciprocating semi-ermetico",
+  "refrigerant": "R1234ze(E)",
+  "vsd": true,
+  "rated_frequency_hz": 33.0,
+  "frequency_min_hz": 25.0,
+  "frequency_max_hz": 70.0,
+  "frequency_scaling": "linear",
+  "T_evap_range_C": [-15.0, 9.0],
+  "T_cond_range_C": [12.0, 85.0],
+  "polynomials": {
+    "Q_evap_W":   [21018.531, 980.535, -121.979, 16.318, -7.827, -1.817, 0.07852, -0.12037, -0.000447, 0.0114],
+    "P_input_W":  [956.633, -46.96, 83.306, -2.097, 2.469, -0.4215, -0.01775, 0.02703, -0.00258, -0.0002395],
+    "m_dot_kg_h": [396.04, 17.206, 0.18433, 0.26484, -0.0475, -0.02491, 0.001157, -0.001056, 0.000138, 1.228e-05],
+    "current_A":  [6.50004, -0.09904, 0.10923, -0.004253, 0.004719, -8.37e-05, -4.79e-05, 6.84e-05, -2.33e-06, -3.81e-06]
+  }
+}

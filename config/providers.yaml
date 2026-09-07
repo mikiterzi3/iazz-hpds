@@ -1,0 +1,26 @@
+# ============================================================================
+# Configurazione provider LLM per gli agenti I.A.zz.
+# MODIFICABILE A MANO: per accendere le risposte vere, quando avrai la
+# chiave API nel file .env, cambia le righe sotto "agent_providers"
+# da "mock" a "claude_sonnet" (agenti specialisti) o "claude_haiku"
+# (query rapide). Vedi roadmap fase F5.
+# ============================================================================
+
+default_provider: claude_sonnet
+
+providers:
+  mock:
+    type: mock
+  claude_sonnet:
+    type: anthropic
+    model: claude-sonnet-4-5
+    max_tokens: 1500
+  claude_haiku:
+    type: anthropic
+    model: claude-haiku-4-5
+    max_tokens: 800
+
+agent_providers:
+  thermodynamic: claude_sonnet
+  compressor: mock
+  coordinator: claude_sonnet

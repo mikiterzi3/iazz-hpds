@@ -1,0 +1,60 @@
+# =============================================================================
+# pyproject.toml — la "carta d'identità" del progetto Python.
+#
+# PROBLEMA: come dice Python quali librerie servono e come si installa il
+#           nostro pacchetto?
+# CONCETTO: questo file standard (PEP 621) dichiara metadati, dipendenze e
+#           configurazione dei tool (black, ruff, pytest) in un posto solo.
+# =============================================================================
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "iazz-hpds"
+version = "0.1.0"
+description = "I.A.zz — Heat Pumps Design & Sizing: tool web con agenti AI per progettare chiller e pompe di calore"
+readme = "README.md"
+requires-python = ">=3.11"
+authors = [
+    { name = "Michele Terzi", email = "terzimichele17@gmail.com" },
+]
+dependencies = [
+    "pydantic>=2.7",       # validazione dati + serializzazione JSON
+    "CoolProp>=6.6",       # proprietà termodinamiche dei refrigeranti (NIST-quality)
+    "streamlit>=1.35",     # interfaccia web
+    "plotly>=5.20",        # diagrammi p-h interattivi
+    "pypdf>=4.0",          # estrazione testo dai PDF (knowledge extractor)
+    "openpyxl>=3.1",       # lettura export Excel dei polinomi compressori
+    "pyyaml>=6.0",         # file di configurazione agenti
+]
+
+[project.optional-dependencies]
+# Dipendenze solo per lo sviluppo: si installano con  pip install -e ".[dev]"
+dev = [
+    "pytest>=8.0",         # test automatici
+    "hypothesis>=6.100",   # property-based testing per i calcoli
+    "black>=24.0",         # formattatore automatico del codice
+    "ruff>=0.4",           # linter (trova errori e stile scadente)
+]
+# Dipendenze per gli agenti AI (fase F5+)
+ai = [
+    "anthropic>=0.25",     # Claude API
+    "python-dotenv>=1.0",  # carica ANTHROPIC_API_KEY dal file .env
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/iazz"]
+
+[tool.black]
+line-length = 88
+target-version = ["py311"]
+
+[tool.ruff]
+line-length = 88
+target-version = "py311"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-v"

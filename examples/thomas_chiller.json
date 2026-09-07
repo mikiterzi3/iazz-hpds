@@ -1,0 +1,173 @@
+{
+  "name": "Chiller Thomas 500 vacche",
+  "created_at": "2026-06-11T08:05:12.481703",
+  "modified_at": "2026-06-11T08:05:12.481706",
+  "description": "Caso fondativo I.A.zz: chiller con recupero termico per stalla da 500 vacche. Latte 35→4 °C, acqua pozzo 12→19 °C. Compressore di riferimento: Bitzer 4NES-14Y-40P VSD.",
+  "cold_load": {
+    "name": "Latte mungitura",
+    "fluid_type": "milk",
+    "flow_rate_kg_s": 0.4292,
+    "cp_kJ_kgK": 3.9,
+    "T_in_C": 35.0,
+    "T_out_C": 4.0
+  },
+  "hot_load": {
+    "name": "Acqua vacche",
+    "fluid_type": "water",
+    "flow_rate_kg_s": 0.724,
+    "cp_kJ_kgK": 4.186,
+    "T_in_C": 12.0,
+    "T_out_C": 19.0
+  },
+  "refrigerant": {
+    "name": "R1234ze(E)",
+    "GWP100": 7,
+    "safety_class": "A2L",
+    "coolprop_name": "R1234ze(E)"
+  },
+  "regimes": [
+    {
+      "label": "A — worst case latte 4°C",
+      "T_evap_C": -2.0,
+      "T_cond_C": 40.0,
+      "Q_evap_required_kW": 21.76,
+      "superheat_K": 5.0,
+      "subcooling_K": 3.0,
+      "eta_isentropic": 0.7
+    },
+    {
+      "label": "B — alleggerito latte 8°C",
+      "T_evap_C": 2.0,
+      "T_cond_C": 40.0,
+      "Q_evap_required_kW": 15.06,
+      "superheat_K": 5.0,
+      "subcooling_K": 3.0,
+      "eta_isentropic": 0.7
+    }
+  ],
+  "ambient": {
+    "T_air_summer_design_C": 38.0,
+    "T_air_winter_typical_C": 5.0,
+    "T_well_water_C": 12.0,
+    "days_winter": 200,
+    "days_summer": 165
+  },
+  "architecture": "precooler_glycol_dual_condenser",
+  "cycle_results": {
+    "A — worst case latte 4°C": {
+      "refrigerant": "R1234ze(E)",
+      "regime_label": "A — worst case latte 4°C",
+      "points": [
+        {
+          "label": "1",
+          "description": "Uscita evaporatore (vapore SH)",
+          "T_C": 3.0,
+          "p_bar": 2.010493756761266,
+          "h_kJ_kg": 387.2068864293833,
+          "s_kJ_kgK": 1.6903649806145098
+        },
+        {
+          "label": "2s",
+          "description": "Mandata ideale (isoentropica)",
+          "T_C": 42.96107830913087,
+          "p_bar": 7.664512335809878,
+          "h_kJ_kg": 412.91043954887425,
+          "s_kJ_kgK": 1.6903649806145098
+        },
+        {
+          "label": "2",
+          "description": "Mandata compressore (reale)",
+          "T_C": 53.543767872278295,
+          "p_bar": 7.664512335809878,
+          "h_kJ_kg": 423.9262480286561,
+          "s_kJ_kgK": 1.7246431323633673
+        },
+        {
+          "label": "3",
+          "description": "Uscita condensatore (liquido SC)",
+          "T_C": 37.0,
+          "p_bar": 7.664512335809878,
+          "h_kJ_kg": 250.6971989754327,
+          "s_kJ_kgK": 1.1723403885458774
+        },
+        {
+          "label": "4",
+          "description": "Uscita valvola (bifase)",
+          "T_C": -2.0,
+          "p_bar": 2.010493756761266,
+          "h_kJ_kg": 250.6971989754327,
+          "s_kJ_kgK": 1.187065779885158
+        }
+      ],
+      "m_dot_kg_s": 0.15940260655376856,
+      "Q_evap_kW": 21.76,
+      "Q_cond_kW": 27.613161949914442,
+      "W_comp_kW": 5.853161949914442,
+      "COP_cooling": 3.717648714694811,
+      "COP_heating": 4.717648714694811,
+      "T_discharge_C": 53.543767872278295,
+      "pressure_ratio": 3.81225373619501
+    },
+    "B — alleggerito latte 8°C": {
+      "refrigerant": "R1234ze(E)",
+      "regime_label": "B — alleggerito latte 8°C",
+      "points": [
+        {
+          "label": "1",
+          "description": "Uscita evaporatore (vapore SH)",
+          "T_C": 7.0,
+          "p_bar": 2.3295727584963295,
+          "h_kJ_kg": 390.01331053680667,
+          "s_kJ_kgK": 1.6904352289291402
+        },
+        {
+          "label": "2s",
+          "description": "Mandata ideale (isoentropica)",
+          "T_C": 42.982300920198725,
+          "p_bar": 7.664512335809878,
+          "h_kJ_kg": 412.93264656477635,
+          "s_kJ_kgK": 1.6904352289291402
+        },
+        {
+          "label": "2",
+          "description": "Mandata compressore (reale)",
+          "T_C": 52.41465412800221,
+          "p_bar": 7.664512335809878,
+          "h_kJ_kg": 422.755219148192,
+          "s_kJ_kgK": 1.7210524381602312
+        },
+        {
+          "label": "3",
+          "description": "Uscita condensatore (liquido SC)",
+          "T_C": 37.0,
+          "p_bar": 7.664512335809878,
+          "h_kJ_kg": 250.6971989754327,
+          "s_kJ_kgK": 1.1723403885458774
+        },
+        {
+          "label": "4",
+          "description": "Uscita valvola (bifase)",
+          "T_C": 2.0000000000001705,
+          "p_bar": 2.3295727584963295,
+          "h_kJ_kg": 250.6971989754327,
+          "s_kJ_kgK": 1.1842530358819894
+        }
+      ],
+      "m_dot_kg_s": 0.10809948563174986,
+      "Q_evap_kW": 15.06,
+      "Q_cond_kW": 18.599383479492516,
+      "W_comp_kW": 3.539383479492515,
+      "COP_cooling": 4.254978328078578,
+      "COP_heating": 5.254978328078578,
+      "T_discharge_C": 52.41465412800221,
+      "pressure_ratio": 3.2900935623736838
+    }
+  },
+  "compressor_selected": null,
+  "heat_exchangers": [],
+  "storage": null,
+  "bom": [],
+  "economics": null,
+  "cost_electricity_eur_kWh": 0.2,
+  "cost_gas_eur_Nm3": 0.95
+}

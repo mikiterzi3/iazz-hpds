@@ -1,0 +1,33 @@
+# --- Python ---
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+
+# --- Ambienti virtuali ---
+.venv/
+venv/
+
+# --- Segreti: MAI su git! ---
+.env
+
+# --- IDE e OS ---
+.vscode/settings.json
+.idea/
+.DS_Store
+Thumbs.db
+
+# --- Output temporanei ---
+*.tmp
+.pytest_cache/
+.ruff_cache/
+
+# --- PDF didattici (pesanti, non vanno nel repo) ---
+*.pdf
+pytest-cache-files-*/
+
+# --- Knowledge base: materiale di terzi, MAI su git ---
+# I PDF sono gia' esclusi sopra. Qui escludiamo anche il testo estratto.
+knowledge/**/*.md
+!knowledge/README.md

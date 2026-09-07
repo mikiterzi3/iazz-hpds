@@ -1,0 +1,91 @@
+{
+  "_README": [
+    "VALORI DI RIFERIMENTO estratti da HP_THOM_v2.4.xlsx (2026-06-11).",
+    "Questo file e' FATTO PER ESSERE MODIFICATO A MANO da Michele:",
+    "- 'value' = valore atteso (dal foglio Excel indicato in 'source')",
+    "- 'tol_pct' = tolleranza percentuale ammessa nel confronto",
+    "Se un test di validazione fallisce e ritieni giusto il nuovo valore,",
+    "aggiorna QUI value/tol_pct e spiega il perche' in",
+    "docs/validation_thomas.md. Non serve toccare il codice dei test."
+  ],
+  "source": "HP_THOM_v2.4.xlsx, foglio 4_CICLO_TERMO",
+  "refrigerant": "R1234ze(E)",
+  "regimes": {
+    "A": {
+      "input": {"T_evap_C": -2, "T_cond_C": 40, "Q_evap_required_kW": 21.75875,
+                "superheat_K": 5.0, "subcooling_K": 3.0, "eta_isentropic": 0.70},
+      "expected": {
+        "p_evap_bar":        {"value": 2.01,    "tol_pct": 1.0},
+        "p_cond_bar":        {"value": 7.66,    "tol_pct": 1.0},
+        "pressure_ratio":    {"value": 3.8109,  "tol_pct": 1.0},
+        "h1_kJ_kg":          {"value": 387.2,   "tol_pct": 0.5},
+        "h2s_kJ_kg":         {"value": 412.9,   "tol_pct": 0.5},
+        "h2_kJ_kg":          {"value": 423.9,   "tol_pct": 0.5},
+        "h3_kJ_kg":          {"value": 250.7,   "tol_pct": 0.5},
+        "T_discharge_C":     {"value": 53.5,    "tol_pct": 1.0},
+        "COP_cooling":       {"value": 3.7193,  "tol_pct": 0.5},
+        "COP_heating":       {"value": 4.7193,  "tol_pct": 0.5},
+        "m_dot_kg_s":        {"value": 0.15940, "tol_pct": 0.5},
+        "W_comp_kW":         {"value": 5.8502,  "tol_pct": 0.5},
+        "Q_cond_kW":         {"value": 27.6089, "tol_pct": 0.5},
+        "rho_suction_kg_m3": {"value": 10.66,   "tol_pct": 1.0},
+        "V_dot_suction_m3_h":{"value": 53.833,  "tol_pct": 1.0}
+      }
+    },
+    "B": {
+      "input": {"T_evap_C": 2, "T_cond_C": 40, "Q_evap_required_kW": 15.06375,
+                "superheat_K": 5.0, "subcooling_K": 3.0, "eta_isentropic": 0.70},
+      "expected": {
+        "p_evap_bar":        {"value": 2.33,    "tol_pct": 1.0},
+        "p_cond_bar":        {"value": 7.66,    "tol_pct": 1.0},
+        "pressure_ratio":    {"value": 3.2876,  "tol_pct": 1.0},
+        "h1_kJ_kg":          {"value": 390.0,   "tol_pct": 0.5},
+        "h2s_kJ_kg":         {"value": 412.9,   "tol_pct": 0.5},
+        "h2_kJ_kg":          {"value": 422.8,   "tol_pct": 0.5},
+        "h3_kJ_kg":          {"value": 250.7,   "tol_pct": 0.5},
+        "T_discharge_C":     {"value": 52.4,    "tol_pct": 1.0},
+        "COP_cooling":       {"value": 4.2470,  "tol_pct": 0.5},
+        "COP_heating":       {"value": 5.2470,  "tol_pct": 0.5},
+        "m_dot_kg_s":        {"value": 0.10814, "tol_pct": 0.5},
+        "W_comp_kW":         {"value": 3.5470,  "tol_pct": 0.5},
+        "Q_cond_kW":         {"value": 18.6107, "tol_pct": 0.5},
+        "rho_suction_kg_m3": {"value": 12.27,   "tol_pct": 1.0},
+        "V_dot_suction_m3_h":{"value": 31.728,  "tol_pct": 1.0}
+      }
+    }
+  },
+  "compressor_bitzer": {
+    "source": "HP_THOM_v2.4.xlsx, foglio 5_COMPRESSORE (what-if e verifica B)",
+    "what_if_design_point": {
+      "input": {"T_evap_C": -2, "T_cond_C": 40, "frequency_hz": 56},
+      "expected": {
+        "Q_evap_kW":  {"value": 21.50684, "tol_pct": 0.01},
+        "P_input_kW": {"value": 5.93919,  "tol_pct": 0.01},
+        "m_dot_kg_h": {"value": 567.077,  "tol_pct": 0.01},
+        "COP_cooling":{"value": 3.62117,  "tol_pct": 0.01}
+      }
+    },
+    "regime_B_33hz": {
+      "input": {"T_evap_C": 2, "T_cond_C": 40, "frequency_hz": 33},
+      "expected": {
+        "Q_evap_kW":  {"value": 15.35, "tol_pct": 1.0},
+        "P_input_kW": {"value": 3.69,  "tol_pct": 1.0},
+        "COP_cooling":{"value": 4.16,  "tol_pct": 1.0}
+      }
+    },
+    "catalog_design_point_56hz": {
+      "_comment": [
+        "Prestazioni dichiarate Bitzer al punto progetto (foglio, righe",
+        "18-25): Q=22.2 kW, P=6.29 kW, COP=3.529. Differiscono dal",
+        "polinomio scalato (21.5/5.94/3.62) perche' lo scaling lineare",
+        "f/33 e' un'approssimazione. Tolleranza quindi piu' larga."
+      ],
+      "input": {"T_evap_C": -2, "T_cond_C": 40, "frequency_hz": 56},
+      "expected": {
+        "Q_evap_kW":  {"value": 22.2,  "tol_pct": 4.0},
+        "P_input_kW": {"value": 6.29,  "tol_pct": 6.0},
+        "COP_cooling":{"value": 3.529, "tol_pct": 3.0}
+      }
+    }
+  }
+}

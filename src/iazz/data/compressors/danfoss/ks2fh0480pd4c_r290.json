@@ -1,0 +1,93 @@
+{
+  "_README": [
+    "Mappa compressore in formato interno I.A.zz (v0).",
+    "Generato da scripts/build_compressor_db.py — NON editare a",
+    "mano: rigenerare dal file Danfoss originale.",
+    "ATTENZIONE: T_evap_range_C / T_cond_range_C non sono nel",
+    "file Danfoss; sono l'envelope indicato a mano al momento",
+    "della generazione. Verificare in Coolselector2."
+  ],
+  "source": "KS2FH0480PD4C polynomials.xlsx (export Coolselector2), convertito e parsato da build_compressor_db.py",
+  "vendor": "Danfoss",
+  "model": "KS2FH0480PD4C",
+  "compressor_type": "",
+  "refrigerant": "R290",
+  "superheat_K": 10.0,
+  "subcooling_K": 0.0,
+  "T_evap_range_C": [
+    -15.0,
+    10.0
+  ],
+  "T_cond_range_C": [
+    30.0,
+    60.0
+  ],
+  "vsd": false,
+  "poly_format": "en12900",
+  "rated_frequency_hz": 50.0,
+  "frequency_min_hz": 50.0,
+  "frequency_max_hz": 50.0,
+  "frequency_scaling": "none",
+  "polynomials": {
+    "Q_evap_W": [
+      489107.787218,
+      15928.891721797,
+      -2914.19004174969,
+      192.95807539477,
+      -82.64607377436391,
+      -23.3235345684141,
+      0.870748233750859,
+      -0.8652476812365401,
+      -0.36054815091185105,
+      0.0882017837164171
+    ],
+    "P_input_W": [
+      41719.690446935,
+      -276.98178492241,
+      725.6876538865599,
+      -5.8164082600628,
+      24.298146337095,
+      12.608058407775,
+      0.07592717510058411,
+      0.30220292057132003,
+      -0.20270499173833,
+      0.0026732674401909
+    ],
+    "current_A": [
+      86.984379547881,
+      -0.389021384364242,
+      0.981022820578802,
+      -0.00923839815619943,
+      0.0325567747432274,
+      0.015181793550596,
+      0.000122251086633218,
+      0.000465474682888711,
+      -0.000243249441528537,
+      5.87694271532161e-05
+    ],
+    "m_dot_kg_h": [
+      4490.21745839703,
+      130.992186108584,
+      1.63405006409302,
+      1.34736136236196,
+      0.146658341342314,
+      -0.150385314207445,
+      0.00616307577209122,
+      0.00306104580490821,
+      -0.00161764772934423,
+      -0.000170906482469488
+    ],
+    "T_discharge_C": [
+      27.148247229429,
+      -0.360100009672881,
+      0.773234056428863,
+      -0.0180830743018951,
+      0.0212022918649411,
+      0.00201202346073841,
+      -0.000563256193925711,
+      0.000955631971181631,
+      -0.000538361384410671,
+      5.57773355127058e-05
+    ]
+  }
+}

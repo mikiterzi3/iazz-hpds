@@ -1,0 +1,35 @@
+{
+  "_README": [
+    "Frascold Z50-185Y — coefficienti EN 12900 trascritti dalla Lesson 3",
+    "del corso Refrigeration and Heat Pump Technology (L. Fusina, UniPd,",
+    "2026-04-27), tutorial REF.BOX. Fit a 50 Hz, SH=7 K, SC=3 K, R1234ze.",
+    "Unità originali kW/kW/A → Q e P convertiti in W (×1000).",
+    "ATTENZIONE: l'envelope vero è PENTAGONALE: (-15,80),(-15,20),(5,20),",
+    "(20,40),(20,80). Qui il rettangolo conservativo inscritto",
+    "Te[-15,5] × Tc[20,80]: si perde la zona Te 5..20 °C con Tc alta.",
+    "Da estendere quando CompressorMap supporterà envelope poligonali.",
+    "Nota: polinomio portata (M) non fornito nel tutorial.",
+    "Il compressore ha inverter opzionale: qui modellato a 50 Hz fissi",
+    "perché i coefficienti sono solo a 50 Hz."
+  ],
+  "source": "Lesson_3_2026.pdf (tutorial REF.BOX, UniPd), trascrizione 2026-07-14",
+  "vendor": "Frascold",
+  "model": "Z50-185Y",
+  "compressor_type": "reciprocating semi-ermetico 6 cilindri, 184.7 m3/h",
+  "refrigerant": "R1234ze(E)",
+  "vsd": false,
+  "rated_frequency_hz": 50.0,
+  "frequency_min_hz": 50.0,
+  "frequency_max_hz": 50.0,
+  "frequency_scaling": "none",
+  "poly_format": "en12900",
+  "superheat_K": 7.0,
+  "subcooling_K": 3.0,
+  "T_evap_range_C": [-15.0, 5.0],
+  "T_cond_range_C": [20.0, 80.0],
+  "polynomials": {
+    "Q_evap_W": [107725.9, 4670.847, -913.83, 73.264, -36.35, -2.63, 0.366, -0.48, -0.028, 0.0206],
+    "P_input_W": [4934.739, -342.19, 462.56, -10.32, 19.021, -2.84, -0.083, 0.164, -0.074, -0.00019],
+    "current_A": [25.90117, -0.48005, 0.371598, -0.01582, 0.024296, -0.00017, -0.00017, 0.000323, -8e-05, -1.8e-05]
+  }
+}
